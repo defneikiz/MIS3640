@@ -1,13 +1,15 @@
-Python 3.6.6 (v3.6.6:4cf1f54eb7, Jun 27 2018, 03:37:03) [MSC v.1900 64 bit (AMD64)] on win32
-Type "copyright", "credits" or "license()" for more information.
->>> print ((42*60)+42)
-2562
->>> print (10*1.61)
-16.1
->>> print(10/1.61)
-6.211180124223602
->>> print(2562/6.21)
-412.56038647342996
->>> print (412.56038647342996/60)
-6.876006441223833
->>> 
+import math
+print('The volume of a sphere with a radius of 5 is: {}'.format ((4/3)* math.pi*(5**3)))
+cover = 24.95
+bscover = cover * 0.6
+bscover = round(bscover,2)
+shipping = 3
+shippingx = 0.75
+order = 60
+total_price = (bscover * order) + (shipping) + ((order-1)*shippingx)
+print ('The total wholesale cost for 60 copies is : ${0}'. format(total_price))
+original = 82
+new = 89
+percent_increase = round ((new - original) / original, 3)
+percent_increase = percent_increase * 100
+print ('The percent increase is {0}%.'.format(percent_increase))
