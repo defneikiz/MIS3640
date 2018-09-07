@@ -1,5 +1,7 @@
+#question 1
 import math
 print('The volume of a sphere with a radius of 5 is: {}'.format ((4/3)* math.pi*(5**3)))
+#question 2
 cover = 24.95
 bscover = cover * 0.6
 bscover = round(bscover,2)
