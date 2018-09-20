@@ -22,23 +22,25 @@ def circle(t, r):
 
 jack= turtle.Turtle()
 
-#circle 1 
-circle(jack,r=100)
-jack.lt(angle=60)
+def flower():
+    '''This function creates a circle with a flower pattern inside'''
+    circle(jack,r=100)
+    jack.lt(angle=60)
 
-for i in range(3):
-    arc(jack,r=100,angle=120)
-    jack.left(angle=120)
+    for i in range(3):
+        arc(jack,r=100,angle=120)
+        jack.left(angle=120)
 
-jack.rt(angle=60)
-jack.penup()
-arc(jack,r=100,angle=60)
-jack.pendown()
-jack.lt(angle=60)
+    jack.rt(angle=60)
+    jack.penup()
+    arc(jack,r=100,angle=60)
+    jack.pendown()
+    jack.lt(angle=60)
 
-for i in range(3):
-    arc(jack,r=100,angle=120)
-    jack.left(angle=120)
+    for i in range(3):
+        arc(jack,r=100,angle=120)
+        jack.left(angle=120)
 
+flower()
 
 turtle.mainloop()

@@ -3,15 +3,18 @@ import math
 
 
 def polyline(t, n, length, angle):
+    ''' This function draws a polyline n times, at desired length and angle which helps create polygons'''
     for i in range(n):
         t.fd(length)
         t.lt(angle)
 
 def polygon(t, n, length):
+    ''' This funtion draws a polygon with n corners, at desired "length" edges '''
     angle = 360.0 / n
     polyline(t, n, length, angle)
 
 def arc(t, r, angle):
+    '''This function draws an arc with radius r, at desired "angle" '''
     arc_length = 2 * math.pi * r * angle / 360
     n = int(arc_length / 3) + 1
     step_length = arc_length / n
@@ -19,12 +22,14 @@ def arc(t, r, angle):
     polyline(t, n, step_length, step_angle)
 
 def circle(t, r):
+    '''This function draws a circle with radius r'''
     arc(t, r, 360)
 
 
 jack= turtle.Turtle()
 
 def circletriangle():
+    '''This function creates a big circle with 4 triangles inside with circles within'''
     jack.speed(10)
     r=120
     r2=r/2

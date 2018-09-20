@@ -24,31 +24,34 @@ def circle(t, r):
 
 jack= turtle.Turtle()
 jack.speed(0)
-r=100
-r2=r/2
-r6=r/6
-jack.pen(pencolor="black", pensize= "3")
-arc(jack,r2,angle=180)
-arc(jack,r,angle=180)
-jack.penup()
-arc(jack,r2,angle=180)
-jack.pendown()
-arc(jack,r2,angle=180)
+def yinyang():
+    '''This function creates a yinyang'''
+    r=100
+    r2=r/2
+    r6=r/6
+    jack.pen(pencolor="black", pensize= "3")
+    arc(jack,r2,angle=180)
+    arc(jack,r,angle=180)
+    jack.penup()
+    arc(jack,r2,angle=180)
+    jack.pendown()
+    arc(jack,r2,angle=180)
 
-arc(jack,r,angle=180)
-jack.penup()
-jack.fd(r6)
-jack.lt(90)
-jack.forward(r2)
-jack.pendown()
+    arc(jack,r,angle=180)
+    jack.penup()
+    jack.fd(r6)
+    jack.lt(90)
+    jack.forward(r2)
+    jack.pendown()
 
-circle(jack,r6)
+    circle(jack,r6)
 
-jack.penup()
-jack.fd(r)
-jack.pendown()
+    jack.penup()
+    jack.fd(r)
+    jack.pendown()
 
-circle(jack,r6)
+    circle(jack,r6)
 
+yinyang()
 
 turtle.mainloop()
