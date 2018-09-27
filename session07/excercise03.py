@@ -1,44 +1,33 @@
-from math import *
-def mysqrt(a):
-    '''
-    Calculates square root.
-    '''
-    x=1
+import math
+ def mysqrt(a):
+    """
+    uses Newton’s method to compute square root of a positive number.
+     Args:
+        a(int): a positive number
+     Returns:
+        the square root of a.
+     """
+    epsilon = 1e-15
+    x = 1
     while True:
-        y = (x + a/x) / 2
-        if abs(y-x) < 0.00000000001:
+        y = (x + a / x) / 2
+        if abs(y - x) < epsilon:
             break
         x = y
-    return y
-
-def test_square_root():
-    '''
-    Displays outcomes of calculating square root of a using different methods, and the absolute difference in between
-    '''
-    line1a = "a"
-    line1b = "mysqrt(a)"
-    line1c = "math.sqrt(a)"
-    line1d = "diff"
-
-    line2a="-"
-    line2b="---------"
-    line2c="-----------"
-    line2d="----"
-
-    spacing1=" "
-    spacing2=" " * 3
-    spacing3=""
-
-    print(line1a,spacing1,line1b,spacing2,line1c,spacing3,line1d)
-    print(line2a,spacing1,line2b,spacing2,line2c,spacing3,line2d)
-
-    for i in range(9):
-        i +=1
-        a = i
-        b = mysqrt(a)
-        c = sqrt(a)
-        d = abs(b-c)
-        print('{:.1f} {:.10f}  {:.10f}  {}'.format(a, b, c, d))
-
-
-test_square_root()
+    return x
+ # for i in range(1, 10):
+#     print('The square root of', i, 'is', mysqrt(i))
+ def test_square_root(n):
+    """
+    prints the square root of integers from 1 to n-1
+     Args:
+        n(int): a positive number
+     """
+     print('{:3} {:14} {:14} {:14}'.format(
+        'a', 'mysqrt(a)', 'math.sqrt(a)', 'diff'))
+    print('{:3} {:14} {:14} {:14}'.format(
+        '-', '---------', '------------', '----'))
+    for a in range(1, n):
+        print('{:3.1f} {:<14.12g} {:<14.12g} {:<14.12g}'.format(
+            a, mysqrt(a), math.sqrt(a), abs(mysqrt(a) - math.sqrt(a))))
+ test_square_root(10)

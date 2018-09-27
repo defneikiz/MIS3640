@@ -12,7 +12,7 @@ def is_special(n):
         return False
     elif n % 4 == 0:
         return True
-    elif n==400:
+    elif n%400==0:
         return True
     else:
         return True
