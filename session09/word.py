@@ -2,7 +2,7 @@ fin = open("session09/words.txt")
 line = repr(fin.readline())
 word = line.strip()
 # print(word)
-
+#SPLIT AND 
 counter = 0
 
 # for line in fin:
@@ -21,20 +21,27 @@ def read_long_words():
         if len(word) > 20:
         # print(word)
 
-
-
-def has_no_e(word):
-    """
-    returns True if the given word doesn’t have the letter “e” in it.
-    """
-    # for letter in word:
-    #     if letter == 'e':
-    #         return False
-    # return True 
-    return not 'e' in word.lower() #same thing
+# def has_no_e(word):
+#     """
+#     returns True if the given word doesn’t have the letter “e” in it.
+#     """
+#     # for letter in word:
+#     #     if letter == 'e':
+#     #         return False
+#     # return True 
+#     return not 'e' in word.lower() #same thing
 
 print(has_no_e('Babson'))
 print(has_no_e('College'))
+
+def has_no_e_2(word):
+    fin = open('session09/words.txt')
+    counter = 0
+    for line in fin:
+        word = line.strip()
+        if has_no_e(word): #because this function returns true or false 
+
+
 
 
 def avoids(word, forbidden):
@@ -54,16 +61,17 @@ def uses_only(word, available):
     takes a word and a string of letters, and that returns True if the word
     contains only letters in the list.
     """
-    for letter in word:
-        if letter not in available:
-            return False
-    return True
+    # for letter in word:
+    #     if letter not in available: #added in not to avoids
+    #         return False
+    # return True
+    return uses_only(required,word)
+
+print(uses_only(word,'aeiou'))
 
 
-
-
-print(uses_only('Babson', 'aBbsonxyz'))
-print(uses_only('college', 'aBbsonxyz'))
+# print(uses_only('Babson', 'aBbsonxyz'))
+# print(uses_only('college', 'aBbsonxyz'))
 
 
 def uses_all(word, required):
@@ -71,7 +79,7 @@ def uses_all(word, required):
     takes a word and a string of required letters, and that returns True if
     the word uses all the required letters at least once.
     """
-    for letter in reequired:
+    for letter in required:
         if letter not in word:
             return False
     return True
