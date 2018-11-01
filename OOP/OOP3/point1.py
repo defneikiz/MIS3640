@@ -54,7 +54,7 @@ def main():
     print(defne + shirley) #when python sees + it will look for __add__
     print(defne - shirley) #when python sees - it will look for __sub__
     print(defne == angela) #when python sees == it will look for __eq__ and apply our definition of equal
-    print(5 in angela)
+    print(5 in angela) #when python sees __contains__
     # print(dir(defne)) #shows attributes you can use. Angela's trick
     # my_point = Point()
     # print(Point.__doc__)
